@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import api from '../utils/Api';
 import Card from './Card';
 import iconEdit from '../images/icon1.svg';
 import iconAdd from '../images/icon2.svg';
 
 function Main(props) {
-  const [userName, setUserName] = React.useState('');
-  const [userDescription, setUserDescription] = React.useState('');
-  const [userAvatar, setUserAvatar] = React.useState('');
-  const [cards, setCards] = React.useState([]);
+  const [userName, setUserName] = useState('');
+  const [userDescription, setUserDescription] = useState('');
+  const [userAvatar, setUserAvatar] = useState('');
+  const [cards, setCards] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const data = api.getProfile();
     data.then((userData) => {
         setUserName(userData.name);
@@ -20,7 +20,7 @@ function Main(props) {
     .catch(err => console.log(err));
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const data = api.getCards();
     data.then((cardsData) => {
       setCards(cardsData)
