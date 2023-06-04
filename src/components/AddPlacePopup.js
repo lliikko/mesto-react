@@ -39,9 +39,9 @@ function AddPlacePopup(props) {
     buttonText = {`Создать`}
     >
            <input id="place" name="place" type="text" className="popup__item" placeholder="Название" minLength="2" maxLength="30" value={name} onChange={handleNameAdd} required/>
-            <span className='popup__input-error popup__input-error_active popup__input-error_type_place' id="place-error"></span>
+            <span className='popup__input-error popup__input-error_type_place' id="place-error"></span>
             <input id="link" name="link" type="url" className="popup__item" placeholder="Ссылка на картинку" value={link} onChange={handleLinkAdd} required/>
-            <span className='popup__input-error popup__input-error_active popup__input-error_type_link' id="link-error"></span>
+            <span className='popup__input-error popup__input-error_type_link' id="link-error"></span>
     </PopupWithForm>
   )
 }

@@ -8,7 +8,6 @@ function Main(props) {
   const currentUser = React.useContext(CurrentUserContext);
 
     return (
-      <>
       <main className="content">
         <section className="profile">
           <div className="profile__avatar">
@@ -27,7 +26,7 @@ function Main(props) {
         </section>
         <section className="cards">
 
-        {props.cards.map((card, _id) => (
+        {props.cards.map((card) => (
             <Card
               key={card._id}
               card={card}
@@ -42,7 +41,7 @@ function Main(props) {
 
         </section>
       </main>
-      </>
+      
     );
 }
 

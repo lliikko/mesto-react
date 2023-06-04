@@ -26,7 +26,7 @@ function EditAvatarPopup(props) {
     buttonText = {`Сохранить`}
     >
             <input ref={refAvatar} id="avatar" name="avatar" type="url" className="popup__item" placeholder="Ссылка" minLength="2" maxLength="130" required/>
-            <span className='popup__input-error popup__input-error_active popup__input-error_type_avatar' id="avatar-error"></span>
+            <span className='popup__input-error popup__input-error_type_avatar' id="avatar-error"></span>
     </PopupWithForm>
   )
 }

@@ -18,10 +18,10 @@ function Card(props) {
   function handleDeleteClick() {
     props.onCardDelete(props.card);
   }
-  
+
   return (
     <div className="cards__item">
-      <img className="cards__image" src={props.link} alt="" id="btnImage" onClick={handleClick}/>
+      <img className="cards__image" src={props.link} alt={props.name} id="btnImage" onClick={handleClick}/>
       {isOwn && <button type="button" className="cards__trash-button" id="btnDelete" onClick={handleDeleteClick}></button>}
       <div className="cards__description">
         <h2 className="cards__name">{props.name}</h2>

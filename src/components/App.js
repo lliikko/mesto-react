@@ -62,9 +62,9 @@ function App() {
   }
 
   function handleCardDelete(card) {
-    api.deleteCard(card._id).then(() => {
-        setCards(cards.filter(item => item !== card))
-      }).catch((err) => console.log(err))
+    api.deleteCard(card._id).then((newCard) => {
+      setCards((state) => state.filter((c) => (c._id === card._id ? "" : newCard )));
+    }).catch((err) => console.log(err))
   }
 
   function handleUpdateUser(data) {
@@ -98,7 +98,6 @@ function App() {
 
   return (
   <CurrentUserContext.Provider value={currentUser}>
-    <body className="page">
     <Header />
     <Main
       onEditProfile={handleEditProfileClick}
@@ -129,7 +128,6 @@ function App() {
       card = {selectedCard}
       onClose = {closeAllPopups}
     />
-    </body>
   </CurrentUserContext.Provider>
   );
 }
